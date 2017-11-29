@@ -9,10 +9,21 @@
 </head>
 <body>
 <c:if test="${requestScope.result != null}">
+<c:choose>
+<c:when test="${!requestScope.result.isEmpty()}">
 <c:forEach items="${requestScope.result}" var="line">
   <c:out value="${line}"/>
   <br/>
 </c:forEach>
+<br/>
+<form action="FrontController" method='post'>
+<input type="submit" name="command" value="NEXT"/>
+</form>
+</c:when>
+<c:otherwise>
+End of XML reached
+</c:otherwise>
+</c:choose>
 </c:if>
 </body>
 </html>

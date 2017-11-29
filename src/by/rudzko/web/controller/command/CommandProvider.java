@@ -2,6 +2,7 @@ package by.rudzko.web.controller.command;
 
 import by.rudzko.web.controller.command.implementation.DomParserCommand;
 import by.rudzko.web.controller.command.implementation.SaxParserCommand;
+import by.rudzko.web.controller.command.implementation.ShowNextCommand;
 import by.rudzko.web.controller.command.implementation.StaxParserCommand;
 
 import java.util.HashMap;
@@ -21,6 +22,7 @@ public class CommandProvider {
 		commands.put(CommandName.SAX, new SaxParserCommand());
 		commands.put(CommandName.STAX, new StaxParserCommand());
 		commands.put(CommandName.DOM, new DomParserCommand());
+		commands.put(CommandName.NEXT, new ShowNextCommand());
 	}
 	
 	public Command getCommand (String key) {
